@@ -16,21 +16,23 @@ function InterestPage({navigation}) {
 
     return (
       <View style={styles.imageText}>
+      <Pressable onPress={PressHandler}>
         <View style={styles.imgView}>
           <Image source={item.src} style={styles.image} />
         </View>
         <View style={styles.textView}>
           <Text style={styles.text}> {item.name}</Text>
         </View>
+        </Pressable>
       </View>
     );
   };
   function PressHandler() {
-    navigation.navigate('Home');
+    navigation.navigate('Sports');
   }
   return (
     <View style={styles.rootContainer}>
-      <Pressable onPress={PressHandler}>
+      
         <FlatList
           data={Data}
           keyExtractor={item => item.id}
@@ -38,7 +40,7 @@ function InterestPage({navigation}) {
           renderItem={renderItem}
           scrollEnabled={true}
         />
-      </Pressable>
+      
     </View>
   );
 }

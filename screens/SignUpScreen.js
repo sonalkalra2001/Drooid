@@ -144,9 +144,9 @@ export default function App(navigation) {
           </TouchableOpacity>
           <Text style={styles.signInTextalign}>
             Already have an account?
-            <span onPress={LoginScreenHandler}>
-              <b>Sign In</b>
-            </span>
+            <Text onPress={LoginScreenHandler}>
+              Sign In
+            </Text>
           </Text>
 
           <TouchableOpacity onPress={PressHandler}>

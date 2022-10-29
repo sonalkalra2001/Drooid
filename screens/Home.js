@@ -63,7 +63,7 @@ function Home({ route, navigation }) {
             South Africa, and he was asked whether Rishabh Pant can be tried out
             as an opener instead of KL Rahul.
           </Text>
-          <br />
+         
           <Text style={styles.para}>
             Rathour said: "No, we're not really thinking that. Two games, I
             don't think that's a good enough sample size anyways. He's been
@@ -132,7 +132,7 @@ function Home({ route, navigation }) {
             and will face the same challenges in acclimatizing fast to vastly
             different conditions.
           </Text>
-          <br />
+          
           <Text style={styles.para}>
             The old WACA and the new Perth Stadium are on either side of the
             Swan River, and there’ll be some choppy waters for India to
@@ -199,7 +199,7 @@ function Home({ route, navigation }) {
             the stump mic against a DRS decision in the third Test — and the
             BCCI had wanted head coach Rahul Dravid to have a word with him.
           </Text>
-          <br />
+         
           <Text style={styles.para}>
             Star Indian batter Virat Kohli is back breaking records and cricket
             is healing! During his instant classic match-winning knock of 82*
@@ -260,8 +260,8 @@ const styles = StyleSheet.create({
   },
 
   boximg: {
-    width: 60,
-    height: 40,
+    width: 40,
+    height: 45,
     marginLeft: 2,
     marginTop: 2,
   },
@@ -302,14 +302,14 @@ const styles = StyleSheet.create({
     opacity: 0.85,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: -145,
+    marginTop: -150,
     marginLeft: 18,
   },
 
   para: {
     color: "black",
-    opacity: 0.8,
-    fontWeight: 400,
+    opacity: 0.5,
+    fontWeight:"bold",
     fontFamily: "Poppins-Regular",
     fontSize: 12,
   },
@@ -320,7 +320,8 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 15,
     margin: 5,
-    marginLeft: 12,
     fontWeight: "bold",
+    
+
   },
 });

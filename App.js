@@ -18,13 +18,13 @@ function App() {
           headerTintColor: 'white',
           headerTitleAlign: 'center',
         }}>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="signupscreen"
           component={SignUpScreen}
           options={{
             title: 'Sign Up',
           }}
-        />
+        /> */}
         <Stack.Screen
           name="loginscreen"
           component={LoginScreen}
