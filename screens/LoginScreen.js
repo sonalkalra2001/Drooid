@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Icon from "react-native-vector-icons/FontAwesome";
+import React, {useState} from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {
   StyleSheet,
   Text,
@@ -8,42 +8,42 @@ import {
   TextInput,
   TouchableOpacity,
   Linking,
-} from "react-native";
+} from 'react-native';
 
 export default function LoginScreen({navigation}) {
-  const [contact, setContact] = useState("");
+  const [contact, setContact] = useState('');
 
   const appleLoginLink = () => {
-    Linking.openURL("https://appleid.apple.com/sign-in");
+    Linking.openURL('https://appleid.apple.com/sign-in');
   };
   const facebookLoginLink = () => {
-    Linking.openURL("https://www.facebook.com/");
+    Linking.openURL('https://www.facebook.com/');
   };
   const gmailLoginLink = () => {
-    Linking.openURL("http://mail.google.com/mail/");
+    Linking.openURL('http://mail.google.com/mail/');
   };
-  function PressHandler(){
 
-    navigation.navigate("interestpage");
-
+  function PressHandler() {
+    navigation.navigate('interestpage');
   }
+
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("./images/Drooid.png")} />
+      <Image style={styles.image} source={require('./images/Drooid.png')} />
 
       <View style={styles.inputView}>
         <View style={styles.shapes}>
-          <View style={[styles.circle, { backgroundColor: "#007E99" }]}>
+          <View style={[styles.circle, {backgroundColor: '#007E99'}]}>
             <Icon name="phone" size={20} color="#FFF" />
           </View>
-          <View style={[styles.triangle, { borderBottomColor: "#007E99" }]} />
+          <View style={[styles.triangle, {borderBottomColor: '#007E99'}]} />
         </View>
         <Text style={styles.contacttxt}>+91 </Text>
         <TextInput
           style={styles.TextInput}
           placeholder="98XXXXXXXX"
           placeholderTextColor="#003f5c"
-          onChangeText={(contact) => setContact(contact)}
+          onChangeText={contact => setContact(contact)}
         />
       </View>
 
@@ -65,16 +65,13 @@ export default function LoginScreen({navigation}) {
                 <View
                   style={[
                     styles.circle,
-                    { backgroundColor: "#000" },
-                    { borderColor: "#FFF" },
-                    { borderWidth: 0.01 },
-                  ]}
-                >
+                    {backgroundColor: '#000'},
+                    {borderColor: '#FFF'},
+                    {borderWidth: 0.01},
+                  ]}>
                   <Icon name="apple" size={20} color="#FFF" />
                 </View>
-                <View
-                  style={[styles.triangle, { borderBottomColor: "#000" }]}
-                />
+                <View style={[styles.triangle, {borderBottomColor: '#000'}]} />
               </View>
               <View style={styles.loginTextalign}>
                 <Text style={styles.loginText}>Login with Apple</Text>
@@ -122,46 +119,46 @@ export default function LoginScreen({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   image: {
-    width: "70%",
+    width: '70%',
     height: 100,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   horizontalLine: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     marginVertical: 30,
-    width: "100%",
-    justifyContent: "center",
+    width: '100%',
+    justifyContent: 'center',
   },
 
   contacttxt: {
-    color: "#000",
+    color: '#000',
     opacity: 0.5,
   },
 
   sideLines: {
     height: 1,
-    width: "45%",
-    backgroundColor: "#000",
+    width: '45%',
+    backgroundColor: '#000',
     opacity: 0.2,
   },
 
   insideSpace: {
-    width: "5%",
+    width: '5%',
   },
 
   textBetween: {
     width: 50,
-    textAlign: "center",
-    color: "#000",
+    textAlign: 'center',
+    color: '#000',
     opacity: 0.2,
   },
 
@@ -169,9 +166,9 @@ const styles = StyleSheet.create({
     width: 42,
     height: 40,
     borderRadius: 50,
-    backgroundColor: "#FFF",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#FFF',
+    alignItems: 'center',
+    justifyContent: 'center',
     marginLeft: 2,
     marginTop: 2.5,
   },
@@ -181,35 +178,35 @@ const styles = StyleSheet.create({
     borderLeftWidth: 6,
     borderRightWidth: 6,
     borderBottomWidth: 8,
-    borderBottomColor: "#FFF",
-    borderTopColor: "#FFFFFF00",
-    borderRightColor: "#FFFFFF00",
-    borderLeftColor: "#FFFFFF00",
-    transform: [{ rotate: "90deg" }],
+    borderBottomColor: '#FFF',
+    borderTopColor: '#FFFFFF00',
+    borderRightColor: '#FFFFFF00',
+    borderLeftColor: '#FFFFFF00',
+    transform: [{rotate: '90deg'}],
     marginTop: 14,
   },
 
   outerView: {
-    width: "85%",
-    alignItems: "center",
+    width: '85%',
+    alignItems: 'center',
   },
 
   allbuttons: {
-    width: "100%",
+    width: '100%',
   },
 
   inputView: {
-    backgroundColor: "#FFF",
+    backgroundColor: '#FFF',
     borderRadius: 30,
-    width: "85%",
+    width: '85%',
     height: 45,
     marginTop: 80,
     marginBottom: 10,
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row',
     shadowRadius: 1.0,
-    shadowColor: "#D3D3D3",
-    shadowOffset: { width: 1, height: 1 },
+    shadowColor: '#D3D3D3',
+    shadowOffset: {width: 1, height: 1},
   },
 
   TextInput: {
@@ -217,8 +214,8 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     marginLeft: 20,
-    alignContent: "center",
-    color: "#000",
+    alignContent: 'center',
+    color: '#000',
     opacity: 0.5,
   },
 
@@ -228,63 +225,63 @@ const styles = StyleSheet.create({
   },
 
   submitBtn: {
-    width: "100%",
+    width: '100%',
     borderRadius: 30,
     height: 45,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#007D9B",
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#007D9B',
     marginTop: 80,
   },
 
   appleBtn: {
-    flexDirection: "row",
-    width: "100%",
+    flexDirection: 'row',
+    width: '100%',
     borderRadius: 30,
     height: 45,
-    backgroundColor: "#000",
+    backgroundColor: '#000',
     marginTop: 20,
     marginBottom: 10,
   },
 
   facebookBtn: {
-    flexDirection: "row",
-    width: "100%",
+    flexDirection: 'row',
+    width: '100%',
     borderRadius: 30,
     height: 45,
-    backgroundColor: "#3B5998",
+    backgroundColor: '#3B5998',
     marginBottom: 10,
   },
 
   gmailBtn: {
-    flexDirection: "row",
-    width: "100%",
+    flexDirection: 'row',
+    width: '100%',
     borderRadius: 30,
     height: 45,
-    backgroundColor: "#F14336",
+    backgroundColor: '#F14336',
     marginBottom: 10,
   },
 
   submitText: {
-    color: "#FFF",
+    color: '#FFF',
     fontSize: 14,
-    textAlign: "center",
+    textAlign: 'center',
   },
 
   loginText: {
-    color: "#FFF",
+    color: '#FFF',
     fontSize: 11,
-    textAlign: "center",
+    textAlign: 'center',
   },
 
   loginTextalign: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   shapes: {
     flex: 0.5,
-    flexDirection: "row",
-    alignItems: "flex-start",
+    flexDirection: 'row',
+    alignItems: 'flex-start',
   },
 });

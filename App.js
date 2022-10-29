@@ -1,11 +1,10 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import InterestPage from './screens/InterestPage';
 import Home from './screens/Home';
-import LoginScreen from './LoginScreen';
+import LoginScreen from './screens/LoginScreen';
+import SignUpScreen from './screens/SignUpScreen';
 
 function App() {
   const Stack = createNativeStackNavigator();
@@ -19,6 +18,13 @@ function App() {
           headerTintColor: 'white',
           headerTitleAlign: 'center',
         }}>
+        <Stack.Screen
+          name="signupscreen"
+          component={SignUpScreen}
+          options={{
+            title: 'Sign Up',
+          }}
+        />
         <Stack.Screen
           name="loginscreen"
           component={LoginScreen}
