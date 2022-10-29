@@ -1,7 +1,8 @@
 import React from "react";
-import { Text, View, StyleSheet, FlatList , Image, SafeAreaView} from "react-native"; 
+import { Text, View, StyleSheet, FlatList , Image, SafeAreaView, Pressable} from "react-native"; 
 import Data from "../util/Data";
-function InterestPage(){
+import Home from "./Home";
+function InterestPage({navigation}){
 
     const renderItem=({item})=>{
 
@@ -23,10 +24,16 @@ function InterestPage(){
 
 
     };
+    function PressHandler(){
+        navigation.navigate("Home");
+        
 
+    }
     return(
         <View style={styles.rootContainer}>
+            <Pressable onPress={PressHandler}>
 
+            
             <FlatList 
                 
                 data={Data}
@@ -37,6 +44,8 @@ function InterestPage(){
                 
                 
             />
+
+            </Pressable>
         </View>
 
     );
