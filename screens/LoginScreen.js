@@ -29,7 +29,7 @@ export default function LoginScreen({navigation}) {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require('./images/Drooid.png')} />
+      <Image style={styles.image} source={require('../images/Drooid.jpeg')} />
 
       <View style={styles.inputView}>
         <View style={styles.shapes}>

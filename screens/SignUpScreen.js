@@ -35,7 +35,7 @@ export default function App(navigation) {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require('./assets/Drooid.png')} />
+      <Image style={styles.image} source={require('../images/Drooid.jpeg')} />
 
       <View style={styles.allinputView}>
         <View style={styles.inputView}>
@@ -143,7 +143,7 @@ export default function App(navigation) {
             </View>
           </TouchableOpacity>
           <Text style={styles.signInTextalign}>
-            Already have an account?{' '}
+            Already have an account?
             <span onPress={LoginScreenHandler}>
               <b>Sign In</b>
             </span>
@@ -213,7 +213,8 @@ const styles = StyleSheet.create({
   circle: {
     width: 42,
     height: 40,
-    borderRadius: '50%',
+    borderRadius: 50,
+
     backgroundColor: '#FFF',
     alignItems: 'center',
     justifyContent: 'center',

@@ -13,7 +13,7 @@ function Home({ route, navigation }) {
           </Text>
         </View>
         <View style={StyleSheet.imgView}>
-          <Image source={require("./assets/rishabKL.jpg")} style={styles.img} />
+          <Image source={require("../images/rishabKL.jpg")} style={styles.img} />
         </View>
 
         <View style={styles.box}>
@@ -28,7 +28,7 @@ function Home({ route, navigation }) {
                 <Icon name="facebook" size={20} color="#FFF" />
               </View>
               <Image
-                source={require("./assets/graph.png")}
+                source={require("../images/graph.png")}
                 style={styles.boximg}
               />
             </View>
@@ -37,7 +37,7 @@ function Home({ route, navigation }) {
                 <Icon name="twitter" size={20} color="#FFF" />
               </View>
               <Image
-                source={require("./assets/graph.png")}
+                source={require("../images/graph.png")}
                 style={styles.boximg}
               />
             </View>
@@ -46,7 +46,7 @@ function Home({ route, navigation }) {
                 <Icon name="instagram" size={20} color="#FFF" />
               </View>
               <Image
-                source={require("./assets/graph.png")}
+                source={require("../images/graph.png")}
                 style={styles.boximg}
               />
             </View>
@@ -82,7 +82,7 @@ function Home({ route, navigation }) {
         </View>
         <View style={StyleSheet.imgView}>
           <Image
-            source={require("./assets/perthCamp.jpeg")}
+            source={require("../images/perthCamp.jpeg")}
             style={styles.img}
           />
         </View>
@@ -99,7 +99,7 @@ function Home({ route, navigation }) {
                 <Icon name="facebook" size={20} color="#FFF" />
               </View>
               <Image
-                source={require("./assets/graph.png")}
+                source={require("../images/graph.png")}
                 style={styles.boximg}
               />
             </View>
@@ -108,7 +108,7 @@ function Home({ route, navigation }) {
                 <Icon name="twitter" size={20} color="#FFF" />
               </View>
               <Image
-                source={require("./assets/graph.png")}
+                source={require("../images/graph.png")}
                 style={styles.boximg}
               />
             </View>
@@ -117,7 +117,7 @@ function Home({ route, navigation }) {
                 <Icon name="instagram" size={20} color="#FFF" />
               </View>
               <Image
-                source={require("./assets/graph.png")}
+                source={require("../images/graph.png")}
                 style={styles.boximg}
               />
             </View>
@@ -150,7 +150,7 @@ function Home({ route, navigation }) {
         </View>
         <View style={StyleSheet.imgView}>
           <Image
-            source={require("./assets/ViratKohli.jpg")}
+            source={require("../images/ViratKohli.jpg")}
             style={styles.img}
           />
         </View>
@@ -166,7 +166,7 @@ function Home({ route, navigation }) {
                 <Icon name="facebook" size={20} color="#FFF" />
               </View>
               <Image
-                source={require("./assets/graph.png")}
+                source={require("../images/graph.png")}
                 style={styles.boximg}
               />
             </View>
@@ -175,7 +175,7 @@ function Home({ route, navigation }) {
                 <Icon name="twitter" size={20} color="#FFF" />
               </View>
               <Image
-                source={require("./assets/graph.png")}
+                source={require("../images/graph.png")}
                 style={styles.boximg}
               />
             </View>
@@ -184,7 +184,7 @@ function Home({ route, navigation }) {
                 <Icon name="instagram" size={20} color="#FFF" />
               </View>
               <Image
-                source={require("./assets/graph.png")}
+                source={require("../images/graph.png")}
                 style={styles.boximg}
               />
             </View>
