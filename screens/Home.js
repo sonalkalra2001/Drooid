@@ -23,6 +23,8 @@ return(
             style={styles.img}
         />
          </View>
+         
+
          <View style={styles.box}>
                 <View style={styles.insidebox}>
                     <Text>Diwali is a Hindu festival that is known as the festival of lights. This festival usually lasts for five days and is celebrated during the Hindu month of Kartika.</Text>

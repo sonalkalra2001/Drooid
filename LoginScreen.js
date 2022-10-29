@@ -10,7 +10,7 @@ import {
   Linking,
 } from "react-native";
 
-export default function App() {
+export default function LoginScreen({navigation}) {
   const [contact, setContact] = useState("");
 
   const appleLoginLink = () => {
@@ -22,10 +22,14 @@ export default function App() {
   const gmailLoginLink = () => {
     Linking.openURL("http://mail.google.com/mail/");
   };
+  function PressHandler(){
 
+    navigation.navigate("interestpage");
+
+  }
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("./assets/Drooid.png")} />
+      <Image style={styles.image} source={require("./images/Drooid.png")} />
 
       <View style={styles.inputView}>
         <View style={styles.shapes}>
@@ -104,7 +108,7 @@ export default function App() {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={}>
+          <TouchableOpacity onPress={PressHandler}>
             <View style={styles.submitBtn}>
               <Text style={styles.submitText}>Submit</Text>
             </View>
@@ -164,7 +168,7 @@ const styles = StyleSheet.create({
   circle: {
     width: 42,
     height: 40,
-    borderRadius: "50%",
+    borderRadius: 50,
     backgroundColor: "#FFF",
     alignItems: "center",
     justifyContent: "center",
