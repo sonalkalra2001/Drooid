@@ -9,38 +9,40 @@ import {
   Pressable,
 } from 'react-native';
 import Data from '../util/Data';
-import Home from './Home';
+
 function InterestPage({navigation}) {
   const renderItem = ({item}) => {
-    // var url=item.src;
 
     return (
       <View style={styles.imageText}>
-      <Pressable onPress={PressHandler}>
-        <View style={styles.imgView}>
-          <Image source={item.src} style={styles.image} />
-        </View>
-        <View style={styles.textView}>
-          <Text style={styles.text}> {item.name}</Text>
-        </View>
+        {/* Press the image to choose your interest */}
+        <Pressable onPress={PressHandler}>
+          <View style={styles.imgView}>
+            <Image source={item.src} style={styles.image} />
+          </View>
+          <View style={styles.textView}>
+            <Text style={styles.text}> {item.name}</Text>
+          </View>
         </Pressable>
       </View>
     );
   };
   function PressHandler() {
-    navigation.navigate('Sports');
+    navigation.navigate('Feed');
   }
   return (
     <View style={styles.rootContainer}>
-      
-        <FlatList
-          data={Data}
-          keyExtractor={item => item.id}
-          numColumns={2}
-          renderItem={renderItem}
-          scrollEnabled={true}
-        />
-      
+      {/* imported data from /util/Data.js
+      and the unique id used as a key to extract data...
+      and scroll bar enabled
+       */}
+      <FlatList
+        data={Data}
+        keyExtractor={item => item.id}
+        numColumns={2}
+        renderItem={renderItem}
+        scrollEnabled={true}
+      />
     </View>
   );
 }

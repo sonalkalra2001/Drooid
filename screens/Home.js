@@ -1,212 +1,163 @@
-import React from "react";
-import Icon from "react-native-vector-icons/FontAwesome";
-import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
+import React from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
+// import PieChart from 'react-native-pie-chart';
+function Home({route, navigation}) {
+  const widthAndHeight = 180;
 
-function Home({ route, navigation }) {
+  const sliceColor = ['#3DBE29', '#51E1ED', '#FF6263'];
   return (
     <View>
       <ScrollView>
         <View style={styles.headView}>
           <Text style={styles.main}>
-            <Text style={styles.head}> KL Rahul or Rishabh Pant </Text>
-            <Text style={styles.time}> 7h ago</Text>
+            {/* Headline */}
+            <Text style={styles.head}>
+              Veteran film actor Jharana Das dies{' '}
+            </Text>
+
+            {/* Time */}
+            <Text style={styles.time}> 1 min ago</Text>
           </Text>
-        </View>
-        <View style={StyleSheet.imgView}>
-          <Image source={require("../images/rishabKL.jpg")} style={styles.img} />
         </View>
 
-        <View style={styles.box}>
-          <Text style={styles.boxText}>
-            Rishabh Pant Play In Place Of KL Rahul Against South Africa As
-            Opener?
-          </Text>
-          <View style={styles.boxhorizontalLine} />
-          <View style={styles.graph}>
-            <View style={styles.graphcontainer}>
-              <View style={styles.iconbox}>
-                <Icon name="facebook" size={20} color="#FFF" />
-              </View>
-              <Image
-                source={require("../images/graph.png")}
-                style={styles.boximg}
-              />
-            </View>
-            <View style={styles.graphcontainer}>
-              <View style={styles.iconbox}>
-                <Icon name="twitter" size={20} color="#FFF" />
-              </View>
-              <Image
-                source={require("../images/graph.png")}
-                style={styles.boximg}
-              />
-            </View>
-            <View style={styles.graphcontainer}>
-              <View style={styles.iconbox}>
-                <Icon name="instagram" size={20} color="#FFF" />
-              </View>
-              <Image
-                source={require("../images/graph.png")}
-                style={styles.boximg}
-              />
-            </View>
-          </View>
+        {/* Dynamic image */}
+        <View style={StyleSheet.imgView}>
+          <Image source={require('../images/img2.jpg')} style={styles.img} />
         </View>
+
+        {/* Summary using sentimental analysis */}
         <View style={styles.paraView}>
           <Text style={styles.para}>
-            Rahul has found going tough at the top of the order and he has not
-            been able to rotate strike freely as well. There have been calls for
-            trying out Rishabh Pant at the top of the order, considering is
-            currently warming the bench as Dinesh Karthik is being preferred
-            ahead of him as the wicketkeeper. India batting coach Vikram Rathour
-            addressed a press conference on Saturday ahead of the game against
-            South Africa, and he was asked whether Rishabh Pant can be tried out
-            as an opener instead of KL Rahul.
+            Family sources reported Friday that veteran Odia film star Jharana
+            Das died at her Cuttack home. 77. Jharana, a recipient of the Jaydev
+            Puraskar for her lifetime contributions to Odia cinema, was ill.
+            Family sources stated she died Thursday night. President Droupadi
+            Murmu, Odisha chief minister Naveen Patnaik, and Union education
+            minister Dharmendra Pradhan mourned Jharana. Saddened by Jharana
+            Das' death. She left an indelible mark on Odia cinema. My
+            condolences to her family and fans tweeting. Odisha's CM said
+            Jharana's funeral will be state-sponsored. "Her stage and screen
+            performances are unforgettable. I pray for her soul and the bereaved
+            family "Patnaik stated.Family sources stated Gorakabar in Cuttack
+            will cremate the corpses. Jharana began performing in 1960s films
+            like Shree Jagannath, Nari, Adinamegha, Hisabnikas, Pujafula,
+            Amadabata, Abhinetri, Malajanha, and Heera Nella.
           </Text>
-         
-          <Text style={styles.para}>
-            Rathour said: "No, we're not really thinking that. Two games, I
-            don't think that's a good enough sample size anyways. He's been
-            batting really well and he's batted really well in the practice
-            games, also, so we're not looking at any such thing at the moment."
-          </Text>
+
+          <Text style={styles.para}></Text>
+          <Text></Text>
+          {/* <PieChart
+            widthAndHeight={widthAndHeight}
+            series={[12, 70, 18]}
+            sliceColor={sliceColor}
+            style={{marginLeft: 60, marginRight: 50}}
+          /> */}
+
+          {/* <Text style={{color: 'black', textAlign:'center', opacity: 0.5,
+    fontWeight: 'bold',
+    fontFamily: 'Poppins-Regular',
+    fontSize: 12,}}>
+            Positive: green, Negative: Red, Neutral:Blue
+          </Text> */}
         </View>
 
         <View style={styles.horizontalLine} />
 
         <View style={styles.headView}>
           <Text style={styles.main}>
-            <Text style={styles.head}> Indian Cricket Team </Text>
-            <Text style={styles.time}> 23h ago</Text>
+            {/* Headline */}
+            <Text style={styles.head}>
+              {' '}
+              Korea Qualifies for Knockout Stage{' '}
+            </Text>
+            {/* Time */}
+            <Text style={styles.time}>2 min ago</Text>
           </Text>
         </View>
+        {/* Dynamic image */}
         <View style={StyleSheet.imgView}>
-          <Image
-            source={require("../images/perthCamp.jpeg")}
-            style={styles.img}
-          />
+          <Image source={require('../images/img3.jpg')} style={styles.img} />
         </View>
-
-        <View style={styles.box}>
-          <Text style={styles.boxText}>
-            T20 World Cup: India look for tips from Perth camp for South Africa
-            game
-          </Text>
-          <View style={styles.boxhorizontalLine} />
-          <View style={styles.graph}>
-            <View style={styles.graphcontainer}>
-              <View style={styles.iconbox}>
-                <Icon name="facebook" size={20} color="#FFF" />
-              </View>
-              <Image
-                source={require("../images/graph.png")}
-                style={styles.boximg}
-              />
-            </View>
-            <View style={styles.graphcontainer}>
-              <View style={styles.iconbox}>
-                <Icon name="twitter" size={20} color="#FFF" />
-              </View>
-              <Image
-                source={require("../images/graph.png")}
-                style={styles.boximg}
-              />
-            </View>
-            <View style={styles.graphcontainer}>
-              <View style={styles.iconbox}>
-                <Icon name="instagram" size={20} color="#FFF" />
-              </View>
-              <Image
-                source={require("../images/graph.png")}
-                style={styles.boximg}
-              />
-            </View>
-          </View>
-        </View>
+        {/* Summary using sentimental analysis */}
         <View style={styles.paraView}>
           <Text style={styles.para}>
-            India may have put up camp in Perth with the Pakistan game in mind
-            but it is against South Africa that all the planning may come to
-            fruition. The South African players too earlier took the
-            early-morning flight from Sydney, where they demolished Bangladesh,
-            and will face the same challenges in acclimatizing fast to vastly
-            different conditions.
+            South Korea beat Portugal to move to the round of 16 at Uruguay's
+            cost a night after Japan upset Spain and topped their group.  South
+            Korea seemed doomed against Portugal's with Cristiano Ronaldo
+            and Ricardo Horta's fifth-minute goal made things worse. The Koreans
+            bravely defended for the following 20 minutes, preventing Portugal
+            from scoring. Kim Young-27th-minute Gwon's equaliser rewarded the
+            persistence.For the following 63 minutes, they had to score another
+            goal, keep Portugal from regaining the lead, and pray that group
+            rivals Uruguay wouldn't add to the two goals they scored in the
+            first 32 minutes against Ghana in the other match. Korean fans, who
+            had come in droves with their trademark horns, were frantically
+            checking the Portugal-Ghana score in the stands. As they struggled
+            to score, Korea's night seemed bleak. Like the Japanese the other
+            night against Spain, they did not give up. They kept attacking the
+            Portuguese goalmouth, and 31 seconds into stoppage time, this arid
+            city found hope. Their star Heung-min Son's lung-busting run to
+            Portugal's end created the goal. He made an inch-perfect pass to
+            Hwang Hee-Chan, who was shadow running, inside the Portugal post.
+            Koreans in the seats, dugout, and on the field jumped with pleasure.
           </Text>
-          
-          <Text style={styles.para}>
-            The old WACA and the new Perth Stadium are on either side of the
-            Swan River, and there’ll be some choppy waters for India to
-            negotiate come Sunday.
-          </Text>
+
+          <Text style={styles.para}></Text>
+          <Text></Text>
+          {/* <PieChart
+            widthAndHeight={widthAndHeight}
+            series={[92, 8, 0]}
+            sliceColor={sliceColor}
+            style={{marginLeft: 60, marginRight: 50}}
+          />
+          <Text></Text>
+          <Text style={{color: 'black', textAlign:'center', opacity: 0.5,
+    fontWeight: 'bold',
+    fontFamily: 'Poppins-Regular',
+    fontSize: 12,}}>
+            Positive: green, Negative: Red, Neutral:Blue
+          </Text> */}
         </View>
 
         <View style={styles.horizontalLine} />
 
         <View style={styles.headView}>
           <Text style={styles.main}>
-            <Text style={styles.head}> India v/s Pakistan </Text>
-            <Text style={styles.time}> 72h 15m ago</Text>
+            {/* Headline */}
+            <Text style={styles.head}> Section 144 Imposed in Mumbai </Text>
+            {/* Time */}
+            <Text style={styles.time}> 2mins ago</Text>
           </Text>
         </View>
         <View style={StyleSheet.imgView}>
-          <Image
-            source={require("../images/ViratKohli.jpg")}
-            style={styles.img}
-          />
+          {/* Dynamic Image */}
+          <Image source={require('../images/img4.jpg')} style={styles.img} />
         </View>
 
-        <View style={styles.box}>
-          <Text style={styles.boxText}>
-            Virat Kohli ends innings as India’s most successful Test skipper
-          </Text>
-          <View style={styles.boxhorizontalLine} />
-          <View style={styles.graph}>
-            <View style={styles.graphcontainer}>
-              <View style={styles.iconbox}>
-                <Icon name="facebook" size={20} color="#FFF" />
-              </View>
-              <Image
-                source={require("../images/graph.png")}
-                style={styles.boximg}
-              />
-            </View>
-            <View style={styles.graphcontainer}>
-              <View style={styles.iconbox}>
-                <Icon name="twitter" size={20} color="#FFF" />
-              </View>
-              <Image
-                source={require("../images/graph.png")}
-                style={styles.boximg}
-              />
-            </View>
-            <View style={styles.graphcontainer}>
-              <View style={styles.iconbox}>
-                <Icon name="instagram" size={20} color="#FFF" />
-              </View>
-              <Image
-                source={require("../images/graph.png")}
-                style={styles.boximg}
-              />
-            </View>
-          </View>
-        </View>
         <View style={styles.paraView}>
+          {/* Summary using sentimental analysis */}
           <Text style={styles.para}>
-            Long used to dominating the top of the charts, Kohli has now slipped
-            to ninth in the list of leading ICC Test batsmen. Rohit Sharma has
-            moved up to the fifth position. Kohli’s on-field behaviour too has
-            often come under criticism—the latest instance being his outburst on
-            the stump mic against a DRS decision in the third Test — and the
-            BCCI had wanted head coach Rahul Dravid to have a word with him.
+            Due to 30th Anniversary of Babri masjid and 65th Death anniversary
+            of Ambedkar, Mumbai Police reportedly invoked Section 144 to
+            maintain peace and public
           </Text>
-         
-          <Text style={styles.para}>
-            Star Indian batter Virat Kohli is back breaking records and cricket
-            is healing! During his instant classic match-winning knock of 82*
-            off 53 balls against Pakistan during the ICC T20 World Cup at
-            Melbourne Cricket Ground (MCG), 'Chasemaster' Kohli went on another
-            record-breaking spree.
-          </Text>
+
+          <Text style={styles.para}></Text>
+          {/* <Text></Text>
+          <PieChart
+            widthAndHeight={widthAndHeight}
+            series={[25, 55, 20]}
+            sliceColor={sliceColor}
+            style={{marginLeft: 60, marginRight: 50}}
+          />
+          <Text></Text>
+          <Text style={{color: 'black', textAlign:'center', opacity: 0.5,
+    fontWeight: 'bold',
+    fontFamily: 'Poppins-Regular',
+    fontSize: 12,}}>
+            Positive: Green, negative: red, neutral:Blue
+          </Text> */}
         </View>
 
         <View style={styles.horizontalLine} />
@@ -217,12 +168,12 @@ function Home({ route, navigation }) {
 export default Home;
 const styles = StyleSheet.create({
   main: {
-    color: "black",
+    color: 'black',
     fontSize: 15,
   },
 
   head: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   headView: {
     padding: 18,
@@ -230,32 +181,32 @@ const styles = StyleSheet.create({
   time: {
     fontSize: 11,
     opacity: 0.6,
-    color: "#000",
+    color: '#000',
   },
 
   horizontalLine: {
     height: 1,
-    width: "90%",
-    backgroundColor: "#000",
+    width: '90%',
+    backgroundColor: '#000',
     opacity: 0.5,
     marginTop: 8,
     marginBottom: 15,
-    justifyContent: "center",
+    justifyContent: 'center',
     marginLeft: 18,
   },
 
   boxhorizontalLine: {
     height: 1,
-    width: "94%",
-    backgroundColor: "#FFF",
+    width: '94%',
+    backgroundColor: '#FFF',
     marginVertical: 5,
-    justifyContent: "center",
+    justifyContent: 'center',
   },
 
   graph: {
-    flexDirection: "row",
-    width: "100%",
-    justifyContent: "space-around",
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-around',
     padding: 5,
   },
 
@@ -267,61 +218,59 @@ const styles = StyleSheet.create({
   },
 
   graphcontainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     marginBottom: 10,
-    backgroundColor: "#FFF",
-    width: "30%",
+    backgroundColor: '#FFF',
+    width: '30%',
     padding: 4,
     borderRadius: 4,
   },
 
   iconbox: {
-    borderColor: "#FFF",
+    borderColor: '#FFF',
     borderRadius: 2,
     borderWidth: 1,
     padding: 10,
     borderRadius: 5,
-    backgroundColor: "#000",
+    backgroundColor: '#000',
     width: 40,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   imgView: {},
 
   img: {
-    width: "100%",
+    width: '100%',
     height: 300,
     marginBottom: 10,
   },
 
   box: {
-    backgroundColor: "#303234",
+    backgroundColor: '#303234',
     borderRadius: 8,
-    width: "90%",
+    width: '90%',
     opacity: 0.85,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: -150,
     marginLeft: 18,
   },
 
   para: {
-    color: "black",
+    color: 'black',
     opacity: 0.5,
-    fontWeight:"bold",
-    fontFamily: "Poppins-Regular",
+    fontWeight: 'bold',
+    fontFamily: 'Poppins-Regular',
     fontSize: 12,
   },
   paraView: {
     margin: 25,
   },
   boxText: {
-    color: "white",
+    color: 'white',
     fontSize: 15,
     margin: 5,
-    fontWeight: "bold",
-    
-
+    fontWeight: 'bold',
   },
 });

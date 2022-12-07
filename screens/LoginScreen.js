@@ -12,7 +12,7 @@ import {
 
 export default function LoginScreen({navigation}) {
   const [contact, setContact] = useState('');
-
+  // Authentication through apple , facebook and gmail login
   const appleLoginLink = () => {
     Linking.openURL('https://appleid.apple.com/sign-in');
   };
@@ -22,6 +22,7 @@ export default function LoginScreen({navigation}) {
   const gmailLoginLink = () => {
     Linking.openURL('http://mail.google.com/mail/');
   };
+  // On Press event to navigate to interest page
 
   function PressHandler() {
     navigation.navigate('interestpage');
@@ -30,7 +31,7 @@ export default function LoginScreen({navigation}) {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={require('../images/Drooid.jpeg')} />
-
+      {/* Login through contact number */}
       <View style={styles.inputView}>
         <View style={styles.shapes}>
           <View style={[styles.circle, {backgroundColor: '#007E99'}]}>
@@ -59,6 +60,7 @@ export default function LoginScreen({navigation}) {
         </View>
 
         <View style={styles.allbuttons}>
+          {/* Apple Login */}
           <TouchableOpacity onPress={() => appleLoginLink()}>
             <View style={styles.appleBtn}>
               <View style={styles.shapes}>
@@ -78,6 +80,8 @@ export default function LoginScreen({navigation}) {
               </View>
             </View>
           </TouchableOpacity>
+
+          {/* Facebook Login */}
           <TouchableOpacity onPress={() => facebookLoginLink()}>
             <View style={styles.facebookBtn}>
               <View style={styles.shapes}>
@@ -91,6 +95,8 @@ export default function LoginScreen({navigation}) {
               </View>
             </View>
           </TouchableOpacity>
+
+          {/* Gmail Login */}
           <TouchableOpacity onPress={() => gmailLoginLink()}>
             <View style={styles.gmailBtn}>
               <View style={styles.shapes}>
@@ -105,6 +111,7 @@ export default function LoginScreen({navigation}) {
             </View>
           </TouchableOpacity>
 
+          {/* Submit Button */}
           <TouchableOpacity onPress={PressHandler}>
             <View style={styles.submitBtn}>
               <Text style={styles.submitText}>Submit</Text>

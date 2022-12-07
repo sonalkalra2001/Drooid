@@ -4,12 +4,13 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import InterestPage from './screens/InterestPage';
 import Home from './screens/Home';
 import LoginScreen from './screens/LoginScreen';
-import SignUpScreen from './screens/SignUpScreen';
 
 function App() {
+  // Navigation between different screens
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
+      {/* global styling for all screens */}
       <Stack.Navigator
         screenOptions={{
           headerStyle: {
@@ -18,13 +19,7 @@ function App() {
           headerTintColor: 'white',
           headerTitleAlign: 'center',
         }}>
-        {/* <Stack.Screen
-          name="signupscreen"
-          component={SignUpScreen}
-          options={{
-            title: 'Sign Up',
-          }}
-        /> */}
+        {/* Initial route or the first screen */}
         <Stack.Screen
           name="loginscreen"
           component={LoginScreen}
@@ -32,6 +27,7 @@ function App() {
             title: 'Login',
           }}
         />
+        {/* navigate to interest page */}
         <Stack.Screen
           name="interestpage"
           component={InterestPage}
@@ -39,7 +35,8 @@ function App() {
             title: 'Choose your interest',
           }}
         />
-        <Stack.Screen name="Sports" component={Home} />
+        {/* Navigate to Home page */}
+        <Stack.Screen name="Feed" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );
