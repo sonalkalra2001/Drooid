@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
-// import PieChart from 'react-native-pie-chart';
+import PieChart from 'react-native-pie-chart';
 function Home({route, navigation}) {
   const widthAndHeight = 180;
 
@@ -47,19 +47,24 @@ function Home({route, navigation}) {
 
           <Text style={styles.para}></Text>
           <Text></Text>
-          {/* <PieChart
+          <PieChart
             widthAndHeight={widthAndHeight}
             series={[12, 70, 18]}
             sliceColor={sliceColor}
             style={{marginLeft: 60, marginRight: 50}}
-          /> */}
+          />
 
-          {/* <Text style={{color: 'black', textAlign:'center', opacity: 0.5,
-    fontWeight: 'bold',
-    fontFamily: 'Poppins-Regular',
-    fontSize: 12,}}>
+          <Text
+            style={{
+              color: 'black',
+              textAlign: 'center',
+              opacity: 0.5,
+              fontWeight: 'bold',
+              fontFamily: 'Poppins-Regular',
+              fontSize: 12,
+            }}>
             Positive: green, Negative: Red, Neutral:Blue
-          </Text> */}
+          </Text>
         </View>
 
         <View style={styles.horizontalLine} />
@@ -105,19 +110,24 @@ function Home({route, navigation}) {
 
           <Text style={styles.para}></Text>
           <Text></Text>
-          {/* <PieChart
+          <PieChart
             widthAndHeight={widthAndHeight}
             series={[92, 8, 0]}
             sliceColor={sliceColor}
             style={{marginLeft: 60, marginRight: 50}}
           />
           <Text></Text>
-          <Text style={{color: 'black', textAlign:'center', opacity: 0.5,
-    fontWeight: 'bold',
-    fontFamily: 'Poppins-Regular',
-    fontSize: 12,}}>
+          <Text
+            style={{
+              color: 'black',
+              textAlign: 'center',
+              opacity: 0.5,
+              fontWeight: 'bold',
+              fontFamily: 'Poppins-Regular',
+              fontSize: 12,
+            }}>
             Positive: green, Negative: Red, Neutral:Blue
-          </Text> */}
+          </Text>
         </View>
 
         <View style={styles.horizontalLine} />
@@ -144,7 +154,7 @@ function Home({route, navigation}) {
           </Text>
 
           <Text style={styles.para}></Text>
-          {/* <Text></Text>
+          <Text></Text>
           <PieChart
             widthAndHeight={widthAndHeight}
             series={[25, 55, 20]}
@@ -152,12 +162,17 @@ function Home({route, navigation}) {
             style={{marginLeft: 60, marginRight: 50}}
           />
           <Text></Text>
-          <Text style={{color: 'black', textAlign:'center', opacity: 0.5,
-    fontWeight: 'bold',
-    fontFamily: 'Poppins-Regular',
-    fontSize: 12,}}>
+          <Text
+            style={{
+              color: 'black',
+              textAlign: 'center',
+              opacity: 0.5,
+              fontWeight: 'bold',
+              fontFamily: 'Poppins-Regular',
+              fontSize: 12,
+            }}>
             Positive: Green, negative: red, neutral:Blue
-          </Text> */}
+          </Text>
         </View>
 
         <View style={styles.horizontalLine} />
