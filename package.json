@@ -7,14 +7,19 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "start-server": "nodemon ./backend/start-server.js"
   },
   "dependencies": {
     "@react-native-community/art": "^1.2.0",
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.9.0",
     "axios": "^1.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "link": "^1.5.1",
+    "node": "^19.2.0",
+    "nodemon": "^2.0.20",
     "react": "18.1.0",
     "react-native": "^0.70.4",
     "react-native-fontawesome": "^7.0.0",

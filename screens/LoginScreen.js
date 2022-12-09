@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   Linking,
 } from 'react-native';
+import axios from 'axios';
 
 export default function LoginScreen({navigation}) {
   const [contact, setContact] = useState('');
@@ -20,7 +21,16 @@ export default function LoginScreen({navigation}) {
     Linking.openURL('https://www.facebook.com/');
   };
   const gmailLoginLink = () => {
-    Linking.openURL('http://mail.google.com/mail/');
+    axios({
+      method: 'get',
+      url: 'http://localhost:6000/test',
+    })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
   // On Press event to navigate to interest page
 
