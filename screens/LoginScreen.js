@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {
   StyleSheet,
@@ -7,12 +7,17 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
-  Linking,
+  Linking,SafeAreaView,
+  Platform, Alert
 } from 'react-native';
+import { WebView } from "react-native-webview";
 import axios from 'axios';
-
+import SafariView from 'react-native-safari-view';
 export default function LoginScreen({navigation}) {
   const [contact, setContact] = useState('');
+  const [user, setUser] = useState(undefined);
+  const [uri, setURL]= useState("");
+
   // Authentication through apple , facebook and gmail login
   const appleLoginLink = () => {
     Linking.openURL('https://appleid.apple.com/sign-in');
@@ -20,18 +25,72 @@ export default function LoginScreen({navigation}) {
   const facebookLoginLink = () => {
     Linking.openURL('https://www.facebook.com/');
   };
-  const gmailLoginLink = () => {
-    axios({
-      method: 'get',
-      url: 'http://localhost:6000/test',
-    })
-      .then(response => {
-        console.log(response.data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+  // Set up Linking
+  useEffect( ()=> {
+    // Add event listener to handle OAuthLogin:// URLs
+    Linking.addEventListener('url', this.handleOpenURL);
+    // Launched from an external URL
+    Linking.getInitialURL().then((url) => {
+      if (url) {
+        this.handleOpenURL({ url });
+      }
+    });
+    return () => {
+      Linking.removeAllListeners("url");
+    };
+  },[]);
+
+  // useEffect(()=> {
+  //   // Remove event listener
+  //   Linking.removeEventListener('url', this.handleOpenURL);
+  // },[]);
+  handleOpenURL = ({ url }) => {
+    // Extract stringified user string out of the URL
+    const user = decodeURI(url).match(
+      /firstName=([^#]+)\/lastName=([^#]+)\/email=([^#]+)/
+    );
+    
+      // Decode the user string and parse it into JSON
+      setUser(JSON.parse(decodeURI(user_string)));
+
+    
+    if (Platform.OS === 'ios') {
+      SafariView.dismiss();
+    }
+    else setURL("");
+
   };
+  openURL = (url) => {
+    // Use SafariView on iOS
+    if (Platform.OS === 'ios') {
+      SafariView.show({
+        url: url,
+        fromBottom: true,
+      });
+    }
+    // Or Linking.openURL on Android
+    else {
+      setURL(url);
+
+      Linking.openURL(url);
+    }
+  };
+  loginWithGoogle = () => this.openURL('http://127.0.0.1:5000/user/login/google');
+  // loginWithGoogle = () => this.openURL('http://google.co.in/');
+  // const gmailLoginLink = () => {
+  //   axios({
+  //     method: 'get',
+  //     url: this.openURL('http://127.0.0.1:5000/user/login/google'),
+    
+  //   })
+  //     .then(response => {
+  //      console.log("successfull response");
+       
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // };
   // On Press event to navigate to interest page
 
   function PressHandler() {
@@ -90,9 +149,23 @@ export default function LoginScreen({navigation}) {
               </View>
             </View>
           </TouchableOpacity>
-
+          {uri !== "" ? (
+        <SafeAreaView style={{ flex: 1 }}>
+          <WebView
+            userAgent={
+              Platform.OS === "android"
+                ? "Chrome/18.0.1025.133 Mobile Safari/535.19"
+                : "AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75"
+            }
+            source={{ uri }}
+            allowFileAccess={true}
+ scalesPageToFit={true}
+ originWhitelist={['*']}/>
+        </SafeAreaView>
+      ) :(
+        <View>
           {/* Facebook Login */}
-          <TouchableOpacity onPress={() => facebookLoginLink()}>
+          <TouchableOpacity onPress={() => openUrl(`http://127.0.0.1:5000/user/login/facebook`)}>
             <View style={styles.facebookBtn}>
               <View style={styles.shapes}>
                 <View style={styles.circle}>
@@ -105,9 +178,9 @@ export default function LoginScreen({navigation}) {
               </View>
             </View>
           </TouchableOpacity>
-
+      
           {/* Gmail Login */}
-          <TouchableOpacity onPress={() => gmailLoginLink()}>
+          <TouchableOpacity onPress={this.loginWithGoogle}>
             <View style={styles.gmailBtn}>
               <View style={styles.shapes}>
                 <View style={styles.circle}>
@@ -120,7 +193,8 @@ export default function LoginScreen({navigation}) {
               </View>
             </View>
           </TouchableOpacity>
-
+          </View>
+          )}
           {/* Submit Button */}
           <TouchableOpacity onPress={PressHandler}>
             <View style={styles.submitBtn}>

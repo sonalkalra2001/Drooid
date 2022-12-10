@@ -4,12 +4,12 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import InterestPage from './screens/InterestPage';
 import Home from './screens/Home';
 import LoginScreen from './screens/LoginScreen';
-
+import linking from "./linking.js";
 function App() {
   // Navigation between different screens
   const Stack = createNativeStackNavigator();
   return (
-    <NavigationContainer>
+    <NavigationContainer >
       {/* global styling for all screens */}
       <Stack.Navigator
         screenOptions={{
