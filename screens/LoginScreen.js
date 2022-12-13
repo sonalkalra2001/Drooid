@@ -49,6 +49,8 @@ export default function LoginScreen({navigation}) {
   };
   loginWithGoogle = () =>
     this.openURL('http://127.0.0.1:5000/user/login/google');
+    loginWithFaceBook = () =>
+    this.openURL('http://127.0.0.1:5000/user/login/facebook');
   // On Press event to navigate to interest page
   function PressHandler() {
     navigation.navigate('interestpage');
@@ -116,8 +118,7 @@ export default function LoginScreen({navigation}) {
               <View>
                 {/* Facebook Login */}
                 <TouchableOpacity
-                  onPress={() =>
-                    openUrl(`http://127.0.0.1:5000/user/login/facebook`)
+                  onPress={loginWithFaceBook
                   }>
                   <View style={styles.facebookBtn}>
                     <View style={styles.shapes}>

@@ -21,16 +21,16 @@ const initPassport = (app) => {
 };
 
 ////////// FACEBOOK //////////
-// passport.use(
-//   new FacebookStrategy.Strategy(
-//    facebook,
-//     async (accessToken, refreshToken, profile, done) => {
-//        console.log(profile);
-//       //done(err, user) will return the user we got from fb
-//       done(null, profile);
-//     }
-//   )
-// );
+passport.use(
+  new FacebookStrategy.Strategy(
+   facebook,
+    async (accessToken, refreshToken, profile, done) => {
+       console.log(profile);
+      //done(err, user) will return the user we got from fb
+      done(null, profile);
+    }
+  )
+);
 
 ////////// GOOGLE //////////
 passport.use(

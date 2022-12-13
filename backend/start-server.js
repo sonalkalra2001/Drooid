@@ -7,20 +7,24 @@ const authRoutes= require("./routes/auth-routes_google");
 const successRoute=require("./routes/successful_login");
 const failureRoute= require("./routes/failure_login");
 const logout=require("./routes/logout");
+const fbauth= require("./routes/auth-routes_facebook");
+
 var mysql = require('mysql');
 const {initPassport} = require('./config/initPassport.js');
 
 const app = express();
+app.enable('trust proxy');
+
 app.use(cors({origin: true, credentials: true}));
 initPassport(app);
 app.use('/user/login/google',authRoutes,);
 app.use('/redirect',successRoute);
 app.use('/failure', failureRoute);
 
-// app.get(
-//   '/user/login/facebook',
-//   passport.authenticate('facebook', {scope: ['email']}),
-// ); //define the scope to also access the email
+app.use(
+  '/user/login/facebook',
+  fbauth
+); //define the scope to also access the email
 
 // app.get(
 //   '/user/login/facebook/callback',
