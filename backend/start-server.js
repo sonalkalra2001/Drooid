@@ -37,7 +37,13 @@ app.get(
 app.get('/success', (req, res) => {
   console.log('Succcess');
 
-  res.send('Succccccccccccccccccccccccccccccccccccccesssssssssssssssssssss');
+  res.render('/');
+});
+app.get('/test', (req, res) => {
+  console.log('Succcess');
+  console.log(req.query);
+
+  res.send('successfully tested');
 });
 app.get('/auth/google', (req, res) => {
   console.log('Failure');

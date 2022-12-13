@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@react-native-community/art": "^1.2.0",
+    "@react-native-google-signin/google-signin": "^9.0.0",
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.9.0",
     "axios": "^1.2.1",
@@ -28,6 +29,7 @@
     "passport-google-oauth20": "^2.0.0",
     "react": "18.1.0",
     "react-native": "^0.70.6",
+    "react-native-deep-linking": "^2.2.0",
     "react-native-fontawesome": "^7.0.0",
     "react-native-pie-chart": "^2.0.2",
     "react-native-safari-view": "^2.1.0",
