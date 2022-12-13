@@ -23,14 +23,7 @@ const initPassport = (app) => {
 ////////// FACEBOOK //////////
 // passport.use(
 //   new FacebookStrategy.Strategy(
-//    {
-//     clientID: process.env.FACEBOOK_APP_ID,
-//   clientSecret: process.env.FACEBOOK_APP_SECRET,
-//   //todo: based on env, change url to localhost, dev or prod
-//   callbackURL: "http://localhost:5000/user/login/facebook/callback",
-//   // enableProof: true, //to enable secret proof
-//   profileFields: ['id', 'emails', 'name'] //scope of fields
-//    },
+//    facebook,
 //     async (accessToken, refreshToken, profile, done) => {
 //        console.log(profile);
 //       //done(err, user) will return the user we got from fb
@@ -42,14 +35,7 @@ const initPassport = (app) => {
 ////////// GOOGLE //////////
 passport.use(
   new GoogleStrategy(
-    {
-      clientID: "68320937292-kp01a32c9vdajg8g8lssqj5mpf958cg9.apps.googleusercontent.com",
-  clientSecret: "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",
-  //todo: based on env, change url to localhost, dev or prod
-  callbackURL: "http://127.0.0.1:5000/user/login/google/callback",
-  passReqToCallback: true,
-    }
-    
+    google
     ,
     function (request,accessToken, refreshToken, profile, done){
       console.log(profile);

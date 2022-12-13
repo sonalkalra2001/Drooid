@@ -1,56 +1,21 @@
 const express = require('express');
-const session =require('express-session');
+const passport = require('passport');
+const cors = require('cors');
+const cookieSession = require('cookie-session');
+require('dotenv').config();
+const authRoutes= require("./routes/auth-routes_google");
+const successRoute=require("./routes/successful_login");
+const failureRoute= require("./routes/failure_login");
+const logout=require("./routes/logout");
+var mysql = require('mysql');
+const {initPassport} = require('./config/initPassport.js');
+
 const app = express();
-const cors =require('cors');
 app.use(cors({origin: true, credentials: true}));
-
-
-require("dotenv").config();
-const {initPassport}= require('./initPassport.js');
-
-// Launch the server on the port 5000
-
-const passport =  require('passport');
-
-
 initPassport(app);
-// app.use(session({secret: 'cats', resave: false, saveUninitialized: true}));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
-
-app.get(
-  '/user/login/google',
-  passport.authenticate('google', {scope: ['profile', 'email']})
-  
-); //define this scope to have access to the email
-app.get(
-  '/user/login/google/callback',
-  passport.authenticate('google', {
-    successRedirect: '/success',
-    failureRedirect: '/auth/google',
-  }),
-  // Redirect user back to the mobile app using deep linking
-);
-
-
-app.get('/success', (req, res) => {
-  console.log('Succcess');
-
-  res.render('/');
-});
-app.get('/test', (req, res) => {
-  console.log('Succcess');
-  console.log(req.query);
-
-  res.send('successfully tested');
-});
-app.get('/auth/google', (req, res) => {
-  console.log('Failure');
-
-  res.send('Failed testing wth google');
-});
-
+app.use('/user/login/google',authRoutes,);
+app.use('/redirect',successRoute);
+app.use('/failure', failureRoute);
 
 // app.get(
 //   '/user/login/facebook',
@@ -66,11 +31,14 @@ app.get('/auth/google', (req, res) => {
 //   },
 // );
 
+app.use('/logout', logout);
+// Launch the server on the port 5000
 
-app.get('/logout', function (req, res) {
-  console.log('here');
-});
+
+
+
 
 const server = app.listen(5000, () => {
   console.log(`Listening at http://127.0.0.1:5000`);
+
 });
