@@ -8,14 +8,16 @@ const successRoute=require("./routes/successful_login");
 const failureRoute= require("./routes/failure_login");
 const logout=require("./routes/logout");
 const fbauth= require("./routes/auth-routes_facebook");
-
 var mysql = require('mysql');
 const {initPassport} = require('./config/initPassport.js');
+const phoneverification=require("./routes/phone-verify");
+require("./database_handle/GoogleData.controller");
 
 const app = express();
 app.enable('trust proxy');
+app.use(express.json());;
 
-app.use(cors({origin: true, credentials: true}));
+app.use(cors({origin: true, credentials: true, optionsSuccessStatus: 200,}));
 initPassport(app);
 app.use('/user/login/google',authRoutes,);
 app.use('/redirect',successRoute);
@@ -38,11 +40,8 @@ app.use(
 app.use('/logout', logout);
 // Launch the server on the port 5000
 
+app.use("/api/auth", phoneverification);
 
-
-
-
-const server = app.listen(5000, () => {
-  console.log(`Listening at http://127.0.0.1:5000`);
-
+const server =app.listen(5000,() => {
+  console.log('Server listening on port ' + 5000);
 });
