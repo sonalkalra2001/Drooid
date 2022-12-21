@@ -10,12 +10,15 @@ const logout=require("./routes/logout");
 const fbauth= require("./routes/auth-routes_facebook");
 var mysql = require('mysql');
 const {initPassport} = require('./config/initPassport.js');
-const phoneverification=require("./routes/phone-verify");
+const phoneauthentication=require("./routes/phone-verify");
+const otpverify=require("./routes/verification");
 require("./database_handle/GoogleData.controller");
-
+require("./database_handle/PhoneData");
+require("./database_handle/OTP");
 const app = express();
 app.enable('trust proxy');
 app.use(express.json());;
+
 
 app.use(cors({origin: true, credentials: true, optionsSuccessStatus: 200,}));
 initPassport(app);
@@ -40,8 +43,8 @@ app.use(
 app.use('/logout', logout);
 // Launch the server on the port 5000
 
-app.use("/api/auth", phoneverification);
-
+app.use("/phone/otp", phoneauthentication);
+app.use("/otp/verify", otpverify);
 const server =app.listen(5000,() => {
   console.log('Server listening on port ' + 5000);
 });

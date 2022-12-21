@@ -10,28 +10,28 @@ const sequelize = new Sequelize(
      }
    );
    sequelize.authenticate().then(() => {
-    console.log('Connection has been established successfully.');
+    console.log('Connection has been established successfully.------------------------------');
  }).catch((error) => {
     console.error('Unable to connect to the database: ', error);
  });
  
-const GoogleData = sequelize.define("google_database", {
-    email: {
+const PhoneData = sequelize.define("phone_database", {
+
+
+    phone: {
       type: DataTypes.STRING,
       allowNull: false
     },
 
-    userName: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    secretKey: {
-      type: DataTypes.STRING,
-    }
  });
 
  sequelize.sync().then(() => {
-    console.log('GoogleData table created successfully!');
+    console.log('pHONE table created successfully!');
+
+
  }).catch((error) => {
     console.error('Unable to create table : ', error);
  });
+module.exports={PhoneData};
+
+

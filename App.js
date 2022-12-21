@@ -9,7 +9,7 @@ function App() {
   // Navigation between different screens
   const Stack = createNativeStackNavigator();
   return (
-    <NavigationContainer linking={linking}>
+    <NavigationContainer >
       {/* global styling for all screens */}
       <Stack.Navigator
         screenOptions={{

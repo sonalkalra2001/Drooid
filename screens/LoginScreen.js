@@ -100,7 +100,13 @@ export default function LoginScreen({navigation}) {
               // onEndEditing={finished}
             />
           </View>
-
+          <View style={styles.submitBtn}>
+            <TouchableOpacity onPress={PressHandler}>
+              <View >
+                <Text style={styles.submitText}>Generate OTP</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
           <View style={styles.outerView}>
             <View style={styles.horizontalLine}>
               <View style={styles.sideLines} />
@@ -116,22 +122,8 @@ export default function LoginScreen({navigation}) {
              
 
               <View>
-                {/* Facebook Login */}
-                <TouchableOpacity
-                  onPress={loginWithFaceBook
-                  }>
-                  <View style={styles.facebookBtn}>
-                    <View style={styles.shapes}>
-                      <View style={styles.circle}>
-                        <Icon name="facebook" size={20} color="#3B5998" />
-                      </View>
-                      <View style={styles.triangle} />
-                    </View>
-                    <View style={styles.loginTextalign}>
-                      <Text style={styles.loginText}>Login with Facebook</Text>
-                    </View>
-                  </View>
-                </TouchableOpacity>
+               
+              
 
                 {/* Gmail Login */}
                 <TouchableOpacity onPress={loginWithGoogle}>
@@ -150,11 +142,11 @@ export default function LoginScreen({navigation}) {
               </View>
 
               {/* Submit Button */}
-              <TouchableOpacity onPress={PressHandler}>
+              {/* <TouchableOpacity onPress={PressHandler}>
                 <View style={styles.submitBtn}>
                   <Text style={styles.submitText}>Submit</Text>
                 </View>
-              </TouchableOpacity>
+              </TouchableOpacity> */}
             </View>
           </View>
         </View>
@@ -172,10 +164,11 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: '70%',
-    height: 100,
+    width: '80%',
+    height: 150,
     justifyContent: 'center',
     alignItems: 'center',
+    resizeMode: 'contain',
   },
 
   horizontalLine: {
@@ -236,18 +229,20 @@ const styles = StyleSheet.create({
   outerView: {
     width: '85%',
     alignItems: 'center',
+    marginTop: 20,
   },
 
   allbuttons: {
     width: '100%',
   },
 
+
   inputView: {
     backgroundColor: '#FFF',
     borderRadius: 30,
     width: '85%',
     height: 45,
-    marginTop: 80,
+    marginTop: 50,
     marginBottom: 10,
     alignItems: 'center',
     flexDirection: 'row',
@@ -272,32 +267,14 @@ const styles = StyleSheet.create({
   },
 
   submitBtn: {
-    width: '100%',
+    width: '55%',
     borderRadius: 30,
     height: 45,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#007D9B',
-    marginTop: 80,
-  },
-
-  appleBtn: {
-    flexDirection: 'row',
-    width: '100%',
-    borderRadius: 30,
-    height: 45,
-    backgroundColor: '#000',
-    marginTop: 20,
-    marginBottom: 10,
-  },
-
-  facebookBtn: {
-    flexDirection: 'row',
-    width: '100%',
-    borderRadius: 30,
-    height: 45,
-    backgroundColor: '#3B5998',
-    marginBottom: 10,
+    marginTop: 30,
+    marginHorizontal: 'auto',
   },
 
   gmailBtn: {
@@ -307,6 +284,7 @@ const styles = StyleSheet.create({
     height: 45,
     backgroundColor: '#F14336',
     marginBottom: 10,
+    marginTop: 30
   },
 
   submitText: {
@@ -317,7 +295,7 @@ const styles = StyleSheet.create({
 
   loginText: {
     color: '#FFF',
-    fontSize: 11,
+    fontSize: 12,
     textAlign: 'center',
   },
 
